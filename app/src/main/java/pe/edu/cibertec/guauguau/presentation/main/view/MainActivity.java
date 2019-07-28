@@ -1,7 +1,10 @@
-package pe.edu.cibertec.guauguau;
+package pe.edu.cibertec.guauguau.presentation.main.view;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import pe.edu.cibertec.guauguau.R;
 
 public class MainActivity extends AppCompatActivity {
 
