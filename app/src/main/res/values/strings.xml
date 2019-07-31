@@ -1,4 +1,7 @@
 <resources>
-    <string name="app_name">GuauGuau</string>
+    <string name="app_name">Guau Guau</string>
     <string name="titulo_splash">GUAU GUAU</string>
+    <string name="hint_correo">correo@gmail.com</string>
+    <string name="hint_clave">clave</string>
+    <string name="boton_Login">Login</string>
 </resources>

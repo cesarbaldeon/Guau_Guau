@@ -27,8 +27,6 @@
     <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-
             android:orientation="horizontal">
 
             <EditText
@@ -37,15 +35,13 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="14"
-                android:hint="correo@gmail.com"
-                android:inputType="textEmailAddress"
-                android:autofillHints="" />
+                android:hint="@string/hint_correo"
+                android:inputType="textEmailAddress" />
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
             android:orientation="horizontal">
 
             <EditText
@@ -54,9 +50,9 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="14"
-                android:hint="clave"
-                android:inputType="textPassword"
-                android:autofillHints="" />
+                android:hint="@string/hint_clave"
+                android:inputType="textPassword" >
+            </EditText>
 
             <CheckBox
                 android:id="@+id/ckbClave"
@@ -69,6 +65,7 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="20sp"
             android:orientation="horizontal">
 
             <Button
@@ -76,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="20"
-                android:text="Login"
+                android:text="@string/boton_Login"
                 android:textAlignment="center"
                 android:textStyle="bold" />
         </LinearLayout>
