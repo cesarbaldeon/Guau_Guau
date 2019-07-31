@@ -7,7 +7,7 @@ public interface ILoginContract {
     interface IView{
         void showError(String errorMsg);
         void getUsuariouccess(Usuario pUsuario);
-        void gotToPincipal(int userId);
+        void gotToPincipal(Usuario pUsuario);
     }
 
      interface IPresenter{
