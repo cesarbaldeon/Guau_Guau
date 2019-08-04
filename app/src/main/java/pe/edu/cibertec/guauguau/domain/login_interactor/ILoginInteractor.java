@@ -9,6 +9,6 @@ public interface ILoginInteractor {
         void onError(String errorMsg);
     }
 
-    void getUsuario(String pUserName,String pPwd,ILoginCallBack callBack);
+    void getUsuario(Usuario pUsuario,ILoginCallBack callBack);
 
 }

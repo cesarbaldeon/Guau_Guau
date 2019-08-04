@@ -34,6 +34,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
       Button btnAceptar;
       EditText edtCorreo, edtClave;
       CheckBox ckbClave;
+    Usuario objUsuario = new Usuario();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -107,8 +108,12 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
 
                 if(eCorreo.equals("") || eClave.equals(""))
                     Toast.makeText(this,"Ingrese datos", Toast.LENGTH_SHORT).show();
-                else
-                    presenter.getUsuario(eCorreo,eClave);
+                else{
+                    objUsuario.setUser_Name(eCorreo);
+                    objUsuario.setPassword(eClave);
+                    presenter.getUsuario(objUsuario);
+                }
+
 
                 break;
 

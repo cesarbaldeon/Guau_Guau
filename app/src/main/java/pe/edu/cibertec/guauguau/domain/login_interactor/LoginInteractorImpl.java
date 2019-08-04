@@ -12,10 +12,10 @@ public class LoginInteractorImpl implements ILoginInteractor {
 
 
     @Override
-    public void getUsuario(String pUserName, String pPwd, ILoginCallBack callBack) {
+    public void getUsuario(Usuario pUsuario, ILoginCallBack callBack) {
         JsonPlaceHolderApi jsonPlaceHolderApi = ApiClient.getClient().create(JsonPlaceHolderApi.class);
 
-        Call<Usuario> call = jsonPlaceHolderApi.getUsuario(pUserName,pPwd);
+        Call<Usuario> call = jsonPlaceHolderApi.getUsuario(pUsuario);
 
         call.enqueue(new Callback<Usuario>() {
             @Override

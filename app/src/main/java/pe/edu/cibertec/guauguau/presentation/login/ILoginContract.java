@@ -14,7 +14,7 @@ public interface ILoginContract {
         void attachView(ILoginContract.IView view);
         void detahView();
         boolean isViewAttched();
-        void getUsuario(String pUser_Name,String pPwd);
+        void getUsuario(Usuario pUsuario);
     }
 
 
