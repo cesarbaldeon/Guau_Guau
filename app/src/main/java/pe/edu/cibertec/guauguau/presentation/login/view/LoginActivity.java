@@ -25,6 +25,8 @@ import pe.edu.cibertec.guauguau.data.entities.Usuario;
 import pe.edu.cibertec.guauguau.presentation.login.ILoginContract;
 import pe.edu.cibertec.guauguau.presentation.login.presenter.LoginPresenter;
 import pe.edu.cibertec.guauguau.presentation.main.view.MainActivity;
+import pe.edu.cibertec.guauguau.presentation.menu.view.MenuActivity;
+import pe.edu.cibertec.guauguau.presentation.splash.view.SplashActivity;
 
 public class LoginActivity extends AppCompatActivity implements ILoginContract.IView, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
@@ -107,9 +109,12 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
 
                 if(eCorreo.equals("") || eClave.equals(""))
                     Toast.makeText(this,"Ingrese datos", Toast.LENGTH_SHORT).show();
-                else
-                    presenter.getUsuario(eCorreo,eClave);
-
+                else {
+                    //presenter.getUsuario(eCorreo,eClave);
+                    Intent intent= new Intent(LoginActivity.this, MenuActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
                 break;
 
         }
