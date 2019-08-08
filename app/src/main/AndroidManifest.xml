@@ -13,10 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity android:name=".presentation.recuperaClave.view.RecuperaClave"></activity>
+        <activity android:name=".presentation.registrarce.view.Registrarce" />
         <activity
             android:name=".presentation.menu.view.MenuActivity"
             android:label="@string/title_activity_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".presentation.splash.view.SplashActivity"
             android:screenOrientation="portrait"
