@@ -50,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ems="14"
+                android:maxLength="10"
                 android:hint="@string/hint_clave"
                 android:inputType="textPassword"></EditText>
 
@@ -84,6 +85,8 @@
             android:ems="20"
             android:text="@string/boton_Login"
             android:textAlignment="center"
+            android:background="#03ABF7"
+            android:textColor="@android:color/white"
             android:textStyle="bold" />
     </LinearLayout>
 
