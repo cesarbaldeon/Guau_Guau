@@ -7,7 +7,7 @@
     android:layout_gravity="center"
     android:orientation="vertical"
     android:layout_margin="40sp"
-    tools:context=".presentation.registrarce.view.Registrarce">
+    tools:context=".presentation.registrarse.view.Registrarse">
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

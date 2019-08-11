@@ -118,7 +118,7 @@
             android:autoLink="web"
             android:gravity="right"
             android:clickable="true"
-            android:text="Registrarce"
+            android:text="Registrarse"
             android:textColorLink="@color/design_default_color_primary" />
 
     </LinearLayout>
