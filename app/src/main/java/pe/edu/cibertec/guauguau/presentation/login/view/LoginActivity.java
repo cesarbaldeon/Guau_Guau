@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,8 +27,7 @@ import pe.edu.cibertec.guauguau.presentation.login.presenter.LoginPresenter;
 import pe.edu.cibertec.guauguau.presentation.main.view.MainActivity;
 import pe.edu.cibertec.guauguau.presentation.menu.view.MenuActivity;
 import pe.edu.cibertec.guauguau.presentation.recuperaClave.view.RecuperaClave;
-import pe.edu.cibertec.guauguau.presentation.registrarce.view.Registrarce;
-import pe.edu.cibertec.guauguau.presentation.splash.view.SplashActivity;
+import pe.edu.cibertec.guauguau.presentation.registrarse.view.Registrarse;
 
 public class LoginActivity extends AppCompatActivity implements ILoginContract.IView, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
@@ -125,7 +123,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
                 }
                 break;
             case R.id.txtRegistrar:
-                Intent  intentRegistra= new Intent(LoginActivity.this, Registrarce.class);
+                Intent  intentRegistra= new Intent(LoginActivity.this, Registrarse.class);
                 startActivity(intentRegistra);
                 //finish();
                 break;

@@ -15,7 +15,7 @@
         android:usesCleartextTraffic="true">
         <activity android:name=".presentation.listacanes.view.ListaCanes"></activity>
         <activity android:name=".presentation.recuperaClave.view.RecuperaClave" />
-        <activity android:name=".presentation.registrarce.view.Registrarce" />
+        <activity android:name=".presentation.registrarse.view.Registrarse" />
         <activity
             android:name=".presentation.menu.view.MenuActivity"
             android:label="@string/title_activity_menu"
