@@ -29,17 +29,20 @@
 
     <style name="MyTextLabel" parent="TextAppearance.AppCompat">
         <!--EditText hint color-->
-        <item name="android:textColorHint">@color/default_app_black</item>
+        <item name="android:textColorHint">@color/default_app_white</item>
         <item name="android:textSize">15sp</item>
         <!-- TextInputLayout text color-->
-        <item name="colorControlActivated">@color/default_app_green</item>
+        <item name="colorControlActivated">@color/default_app_white</item>
         <!-- EditText line color when EditText on-focus-->
-        <item name="colorControlHighlight">@color/default_app_green</item>
+        <item name="colorControlHighlight">@color/default_app_white</item>
         <!-- EditText line color when EditText  in un-focus-->
-        <item name="colorControlNormal">@color/default_app_black</item>
-        <item name="android:textColor">@color/default_app_green
-        </item>
+        <item name="colorControlNormal">@color/default_app_green</item>
+        <item name="android:textColorPrimary">@color/default_app_white</item>
     </style>
 
+
+    <style name="CustomCheckBox" parent="AppTheme">
+        <item name="android:buttonTint">@color/default_app_green</item>
+    </style>
 
 </resources>

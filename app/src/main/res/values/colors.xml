@@ -5,5 +5,7 @@
     <color name="colorAccent">#D81B60</color>
     <color name="default_app_white">#FFFFFF</color>
     <color name="default_app_green">#2E7D32</color>
+    <color name="default_app_light_green">#AED581</color>
     <color name="default_app_black">#000000</color>
+    <color name="default_app_light_blue">#B3E5FC</color>
 </resources>
