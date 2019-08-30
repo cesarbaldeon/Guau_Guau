@@ -37,12 +37,21 @@
         <item name="colorControlHighlight">@color/default_app_white</item>
         <!-- EditText line color when EditText  in un-focus-->
         <item name="colorControlNormal">@color/default_app_green</item>
-        <item name="android:textColorPrimary">@color/default_app_white</item>
+        <item name="android:textColorPrimary">@color/default_app_green</item>
     </style>
 
 
     <style name="CustomCheckBox" parent="AppTheme">
         <item name="android:buttonTint">@color/default_app_green</item>
     </style>
+
+
+   <style name="Button_style">
+       <item name="android:elevation">1dp</item>
+       <item name="android:translationZ">1dp</item>
+       <item name="android:textStyle">bold</item>
+       <item name="android:background">@drawable/boton_redondo</item>
+    </style>
+
 
 </resources>

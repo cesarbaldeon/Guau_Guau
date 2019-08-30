@@ -5,4 +5,16 @@
         <item name="windowNoTitle">true</item>
         <item name="android:statusBarColor">@android:color/transparent</item>
     </style>
+
+    <style name="CustomCheckBox" parent="AppTheme">
+        <item name="android:buttonTint">@color/default_app_green</item>
+    </style>
+
+    <style name="Button_style">
+        <item name="android:textColor">@color/default_app_green</item>
+        <item name="android:elevation">1dp</item>
+        <item name="android:translationZ">1dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:background">@drawable/boton_redondo</item>
+    </style>
 </resources>
