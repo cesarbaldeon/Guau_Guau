@@ -109,9 +109,43 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtClave"
             app:layout_constraintVertical_bias="0.0" />
+
+
+        <TextView
+            android:id="@+id/txtRecuperaClave"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:autoLink="web"
+            android:clickable="true"
+            android:text="¿Olvido su Clave?"
+            android:textColorLink="@color/design_default_color_primary"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnAceptar" />
+
+
+        <TextView
+            android:id="@+id/txtRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            android:autoLink="web"
+            android:clickable="true"
+            android:gravity="right"
+            android:text="Registrate"
+            android:textColorLink="@color/design_default_color_primary"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtRecuperaClave"
+            app:layout_constraintTop_toBottomOf="@+id/btnAceptar" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

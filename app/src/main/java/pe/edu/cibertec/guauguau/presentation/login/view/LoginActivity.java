@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -26,7 +26,8 @@ import pe.edu.cibertec.guauguau.presentation.login.ILoginContract;
 import pe.edu.cibertec.guauguau.presentation.login.presenter.LoginPresenter;
 import pe.edu.cibertec.guauguau.presentation.main.view.MainActivity;
 import pe.edu.cibertec.guauguau.presentation.menu.view.MenuActivity;
-import pe.edu.cibertec.guauguau.presentation.splash.view.SplashActivity;
+import pe.edu.cibertec.guauguau.presentation.recuperaClave.view.RecuperaClave;
+import pe.edu.cibertec.guauguau.presentation.registrarse.view.Registrarse;
 
 public class LoginActivity extends AppCompatActivity implements ILoginContract.IView, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
@@ -36,7 +37,11 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
       Button btnAceptar;
       EditText edtCorreo, edtClave;
       CheckBox ckbClave;
-    Usuario objUsuario = new Usuario();
+
+      Usuario objUsuario = new Usuario();
+      TextView txtRecuperaClave;
+      TextView txtRegistrarce;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,12 +52,15 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
         edtCorreo = findViewById(R.id.edtCorreo);
         edtClave =findViewById(R.id.edtClave);
         ckbClave = findViewById(R.id.ckbClave);
-
+        txtRecuperaClave = findViewById(R.id.txtRecuperaClave);
+        txtRegistrarce = findViewById(R.id.txtRegistrar);
         MyApplication application = (MyApplication)getApplication();
 
         application.getAppComponent().inject(this);
         presenter.attachView(this);
         btnAceptar.setOnClickListener(this);
+        txtRegistrarce.setOnClickListener(this);
+        txtRecuperaClave.setOnClickListener(this);
         //ckbClave.setOnClickListener(this);
         ckbClave.setOnCheckedChangeListener(this);
     }
@@ -115,6 +123,16 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
                     objUsuario.setPassword(eClave);
                     presenter.getUsuario(objUsuario);
                 }
+                break;
+            case R.id.txtRegistrar:
+                Intent  intentRegistra= new Intent(LoginActivity.this, Registrarse.class);
+                startActivity(intentRegistra);
+                //finish();
+                break;
+            case R.id.txtRecuperaClave:
+                Intent intentRecupera= new Intent(LoginActivity.this, RecuperaClave.class);
+                startActivity(intentRecupera);
+                //finish();
                 break;
 
         }
