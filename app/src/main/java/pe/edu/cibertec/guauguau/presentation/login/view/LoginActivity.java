@@ -110,22 +110,11 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
 
                 if(eCorreo.equals("") || eClave.equals(""))
                     Toast.makeText(this,"Ingrese datos", Toast.LENGTH_SHORT).show();
-<<<<<<< HEAD
                 else{
                     objUsuario.setUser_Name(eCorreo);
                     objUsuario.setPassword(eClave);
                     presenter.getUsuario(objUsuario);
                 }
-
-
-=======
-                else {
-                    //presenter.getUsuario(eCorreo,eClave);
-                    Intent intent= new Intent(LoginActivity.this, MenuActivity.class);
-                    startActivity(intent);
-                    finish();
-                }
->>>>>>> Feature_CE
                 break;
 
         }
