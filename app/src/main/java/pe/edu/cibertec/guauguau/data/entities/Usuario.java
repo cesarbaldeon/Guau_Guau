@@ -6,9 +6,9 @@ import java.io.Serializable;
 
 public class Usuario implements Serializable {
 
-    @SerializedName("id_User")
+    @SerializedName("id_user")
    private int id_User;
-    @SerializedName("user_Name")
+    @SerializedName("user_name")
    private String user_Name;
     @SerializedName("password")
    private String password;

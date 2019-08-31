@@ -62,14 +62,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
         btnAceptar.setOnClickListener(this);
         txtRecuperaClave.setOnClickListener(this);
         txtRegistrarse.setOnClickListener(this);
-        //ckbClave.setOnClickListener(this);
         ckbClave.setOnCheckedChangeListener(this);
 
-       /* Typeface fuente = Typeface.createFromAsset(getAssets(),fonts);
-        if(fuente != null)
-        {
-            txtTitulo.setTypeface(fuente);
-        }*/
     }
 
     @Override
@@ -80,10 +74,10 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
     @Override
     public void getLoginSuccess(Usuario pUsuario) {
 
-        if(pUsuario != null)
+        if(pUsuario != null && pUsuario.getId_User()>0)
             gotToPincipal(pUsuario);
         else
-            Toast.makeText(this,"Usuario o   Clave incorrecto", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this,"Usuario o Clave incorrecto", Toast.LENGTH_SHORT).show();
 
     }
 
