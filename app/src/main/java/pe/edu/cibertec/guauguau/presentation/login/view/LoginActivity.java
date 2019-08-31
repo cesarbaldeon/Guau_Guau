@@ -25,7 +25,6 @@ import pe.edu.cibertec.guauguau.data.entities.Usuario;
 import pe.edu.cibertec.guauguau.presentation.login.ILoginContract;
 import pe.edu.cibertec.guauguau.presentation.login.presenter.LoginPresenter;
 import pe.edu.cibertec.guauguau.presentation.main.view.MainActivity;
-import pe.edu.cibertec.guauguau.presentation.menu.view.MenuActivity;
 import pe.edu.cibertec.guauguau.presentation.recuperaClave.view.RecuperaClave;
 import pe.edu.cibertec.guauguau.presentation.registrarse.view.Registrarse;
 
@@ -64,6 +63,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
         //ckbClave.setOnClickListener(this);
         ckbClave.setOnCheckedChangeListener(this);
     }
+
 
     @Override
     public void showError(String errorMsg) {
@@ -150,4 +150,5 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
             edtClave.setTransformationMethod(PasswordTransformationMethod.getInstance());
         }
     }
+
 }
