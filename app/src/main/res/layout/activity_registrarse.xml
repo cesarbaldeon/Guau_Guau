@@ -1,191 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_gravity="center"
     android:orientation="vertical"
-    android:layout_margin="40sp"
     tools:context=".presentation.registrarse.view.Registrarse">
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:layout_marginBottom="20sp"
-        android:orientation="horizontal">
 
-        <TextView
-            android:layout_width="336dp"
-            android:layout_height="wrap_content"
-            android:text="Registro Usuario"
-            android:textAlignment="center"
-            android:textColor="#03ABF7"
-            android:textSize="28dp" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="300dp"
+        android:layout_height="600dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="24dp"
+        android:background="@drawable/fondo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-
-        android:orientation="horizontal">
-     <EditText
-         android:id="@+id/edtNombre"
-         android:layout_width="336dp"
-         android:layout_height="wrap_content"
-         android:layout_weight="1"
-         android:ems="14"
-         android:hint="@string/hint_nombre"
-         android:inputType="textPersonName"
-         />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <EditText
-            android:id="@+id/edtApellido"
-            android:layout_width="336dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="14"
-            android:hint="@string/hint_apellidos"
-            android:inputType="textPersonName"
-            />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center">
-        <RadioGroup
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="horizontal"
-            >
-
-            <RadioButton
-                android:id="@+id/radioButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="masculino" />
-
-            <RadioButton
-                android:id="@+id/radioButton2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="femenino" />
-        </RadioGroup>
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/edtCorreo"
-            android:layout_width="336dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="14"
-            android:hint="@string/hint_correo"
-            android:inputType="textEmailAddress" />
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <EditText
-            android:id="@+id/edtDireccion"
-            android:layout_width="336dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="14"
-            android:hint="@string/hint_direccion"
-            android:inputType="textPostalAddress"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="336dp"
-        android:layout_height="wrap_content">
-        <EditText
-            android:id="@+id/edtDistrito"
-            android:layout_width="336dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="14"
-            android:hint="@string/hint_distrito"
-            android:inputType="text"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/edtClave"
-            android:layout_width="341dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="14"
-            android:maxLength="10"
-            android:hint="@string/hint_clave"
-            android:inputType="textPassword"></EditText>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <EditText
-            android:id="@+id/edtConfClave"
-            android:layout_width="341dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:ems="14"
-            android:maxLength="10"
-            android:hint="@string/hint_confirme_clave"
-            android:inputType="textPassword"></EditText>
-
-    </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20sp"
-        android:orientation="horizontal">
 
         <Button
             android:id="@+id/btnAceptar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="10sp"
+            android:layout_width="135dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/boton_redondo"
             android:ems="20"
-            android:text="@string/boton_aceptar"
-            android:background="#03ABF7"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
+            android:text="@string/boton_Registrase_a"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/btnCancelar"
+            app:layout_constraintStart_toStartOf="parent" />
 
         <Button
             android:id="@+id/btnCancelar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginLeft="10sp"
-            android:layout_marginRight="10sp"
+            android:layout_width="135dp"
+            android:layout_height="43dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/boton_redondo"
             android:ems="20"
-            android:text="@string/boton_cancelar"
-            android:background="#03ABF7"
-            android:textColor="@android:color/white"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:text="@string/boton_Registrase_b"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnAceptar" />
 
-</LinearLayout>
+        <EditText
+            android:id="@+id/edtCelular"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/hint_reg_telefono"
+            android:inputType="text"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtDistrito" />
+
+        <EditText
+            android:id="@+id/edtApellido"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/hint_reg_apellido"
+            android:inputType="textPersonName"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtnombre" />
+
+        <EditText
+            android:id="@+id/edtConfClave"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="12dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/hint_reg_reclave"
+            android:inputType="text"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtClave" />
+
+        <EditText
+            android:id="@+id/edtClave"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/hint_reg_clave"
+            android:inputType="text"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintBottom_toTopOf="@+id/edtConfClave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rbFemenino" />
+
+        <EditText
+            android:id="@+id/edtDistrito"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/hint_reg_distrito"
+            android:inputType="text"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintBottom_toTopOf="@+id/edtCelular"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtDireccion" />
+
+        <EditText
+            android:id="@+id/edtnombre"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/hint_reg_nombre"
+            android:inputType="textPersonName"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtTitulo" />
+
+        <EditText
+            android:id="@+id/edtCorreo"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/hint_correo"
+            android:inputType="textEmailAddress"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintBottom_toTopOf="@+id/edtDireccion"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtApellido" />
+
+        <EditText
+            android:id="@+id/edtDireccion"
+            android:layout_width="0dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:hint="@string/hint_reg_direccion"
+            android:inputType="text"
+            android:theme="@style/MyTextLabel"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCorreo" />
+
+
+        <RadioButton
+            android:id="@+id/rbFemenino"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:text="@string/hint_reg_sexo_f"
+            app:layout_constraintBottom_toTopOf="@+id/edtClave"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/rbMasculino"
+            app:layout_constraintTop_toBottomOf="@+id/edtCelular" />
+
+        <RadioButton
+            android:id="@+id/rbMasculino"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="@string/hint_reg_sexo_m"
+            app:layout_constraintBottom_toTopOf="@+id/edtClave"
+            app:layout_constraintEnd_toStartOf="@+id/rbFemenino"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCelular" />
+
+        <TextView
+            android:id="@+id/txtTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="43dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="24dp"
+            android:text="Registrarse"
+            android:textColor="@color/default_app_white"
+            android:textSize="24dp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toTopOf="@+id/edtnombre"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

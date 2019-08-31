@@ -69,10 +69,9 @@ public class MenuActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        // -- action_settings
-      //  if (id == R.id.action_settings) {
-      //      return true;
-      //  }
+        if (id == R.id.action_settings) {
+            return true;
+        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -89,11 +88,11 @@ public class MenuActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_slideshow) {
 
-        } else if (id == R.id.nav_tools) {
+        /*} else if (id == R.id.nav_tools) {*/
 
         } else if (id == R.id.nav_share) {
 
-        } else if (id == R.id.nav_send) {
+        /*} else if (id == R.id.nav_send) {*/
 
         }
 
