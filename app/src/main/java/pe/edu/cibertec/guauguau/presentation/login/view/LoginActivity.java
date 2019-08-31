@@ -1,6 +1,7 @@
 package pe.edu.cibertec.guauguau.presentation.login.view;
 
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -41,7 +42,8 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
     CheckBox ckbClave;
     TextView txtRecuperaClave;
     TextView txtRegistrarse;
-
+    TextView txtTitulo;
+   /* String fonts = "fonts/Drop the Game - TTF.ttf";*/
     Usuario objUsuario = new Usuario();
 
     @Override
@@ -57,6 +59,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
         txtRegistrarse = findViewById(R.id.txtRegistrar);
         MyApplication application = (MyApplication)getApplication();
 
+        txtTitulo = findViewById(R.id.txtTitulo);
         application.getAppComponent().inject(this);
         presenter.attachView(this);
         btnAceptar.setOnClickListener(this);
@@ -64,6 +67,12 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
         txtRegistrarse.setOnClickListener(this);
         //ckbClave.setOnClickListener(this);
         ckbClave.setOnCheckedChangeListener(this);
+
+       /* Typeface fuente = Typeface.createFromAsset(getAssets(),fonts);
+        if(fuente != null)
+        {
+            txtTitulo.setTypeface(fuente);
+        }*/
     }
 
     @Override

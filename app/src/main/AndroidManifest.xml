@@ -11,8 +11,13 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".presentation.registrarse.view.Registrarse"></activity>
-        <activity android:name=".presentation.recuperaClave.view.RecuperaClave" />
+        <activity android:name=".presentation.listavacunas.view.ListaVacunas"></activity>
+        <activity
+            android:name=".presentation.registrarse.view.Registrarse"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.recuperaClave.view.RecuperaClave"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".presentation.menu.view.MenuActivity"
             android:label="@string/title_activity_menu"
