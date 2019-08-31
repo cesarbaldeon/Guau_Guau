@@ -1,17 +1,15 @@
-package pe.edu.cibertec.guauguau.presentation.recuperaClave.view;
+package pe.edu.cibertec.guauguau.presentation.listavacunas.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 
-
 import pe.edu.cibertec.guauguau.R;
 
-public class RecuperaClave extends AppCompatActivity {
+public class ListaVacunas extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recupera_clave);
-
+        setContentView(R.layout.activity_lista_vacunas);
     }
 }

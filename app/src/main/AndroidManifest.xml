@@ -17,6 +17,8 @@
         <activity android:name=".presentation.recuperaClave.view.RecuperaClave"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
+        <activity android:name=".presentation.listavacunas.view.ListaVacunas">
+            android:screenOrientation="portrait"></activity>
         <activity
             android:name=".presentation.menu.view.MenuActivity"
             android:label="@string/title_activity_menu"
