@@ -14,7 +14,7 @@ import retrofit2.http.Query;
 
 public interface JsonPlaceHolderApi {
 
-    @POST("user/Login")
+    @POST("servicios/restapi/va")
     Call<Usuario> getUsuario(@Body Usuario pUsuario);
     /*
     @POST("users/new")

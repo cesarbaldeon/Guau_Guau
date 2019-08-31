@@ -44,7 +44,7 @@
     </style>
 
     <style name="MyTextView" parent="AppTheme">
-        <item name="android:textSize">10sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:clickable">true</item>
         <item name="android:autoLink">web</item>
         <item name="android:textColor">@color/default_app_green</item>
