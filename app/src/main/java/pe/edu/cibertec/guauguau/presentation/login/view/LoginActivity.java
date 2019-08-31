@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,22 +26,23 @@ import pe.edu.cibertec.guauguau.data.entities.Usuario;
 import pe.edu.cibertec.guauguau.presentation.login.ILoginContract;
 import pe.edu.cibertec.guauguau.presentation.login.presenter.LoginPresenter;
 import pe.edu.cibertec.guauguau.presentation.main.view.MainActivity;
+import pe.edu.cibertec.guauguau.presentation.menu.view.MenuActivity;
 import pe.edu.cibertec.guauguau.presentation.recuperaClave.view.RecuperaClave;
 import pe.edu.cibertec.guauguau.presentation.registrarse.view.Registrarse;
+import pe.edu.cibertec.guauguau.presentation.splash.view.SplashActivity;
 
 public class LoginActivity extends AppCompatActivity implements ILoginContract.IView, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
     @Inject
     LoginPresenter presenter;
 
-      Button btnAceptar;
-      EditText edtCorreo, edtClave;
-      CheckBox ckbClave;
+    Button btnAceptar;
+    EditText edtCorreo, edtClave;
+    CheckBox ckbClave;
+    TextView txtRecuperaClave;
+    TextView txtRegistrarse;
 
-      Usuario objUsuario = new Usuario();
-      TextView txtRecuperaClave;
-      TextView txtRegistrarce;
-
+    Usuario objUsuario = new Usuario();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,18 +54,17 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
         edtClave =findViewById(R.id.edtClave);
         ckbClave = findViewById(R.id.ckbClave);
         txtRecuperaClave = findViewById(R.id.txtRecuperaClave);
-        txtRegistrarce = findViewById(R.id.txtRegistrar);
+        txtRegistrarse = findViewById(R.id.txtRegistrar);
         MyApplication application = (MyApplication)getApplication();
 
         application.getAppComponent().inject(this);
         presenter.attachView(this);
         btnAceptar.setOnClickListener(this);
-        txtRegistrarce.setOnClickListener(this);
         txtRecuperaClave.setOnClickListener(this);
+        txtRegistrarse.setOnClickListener(this);
         //ckbClave.setOnClickListener(this);
         ckbClave.setOnCheckedChangeListener(this);
     }
-
 
     @Override
     public void showError(String errorMsg) {
@@ -119,19 +120,23 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
                 if(eCorreo.equals("") || eClave.equals(""))
                     Toast.makeText(this,"Ingrese datos", Toast.LENGTH_SHORT).show();
                 else{
-                    objUsuario.setUser_Name(eCorreo);
+                   /* objUsuario.setUser_Name(eCorreo);
                     objUsuario.setPassword(eClave);
-                    presenter.getUsuario(objUsuario);
+                    presenter.getUsuario(objUsuario);*/
+
+                    Intent intent= new Intent(LoginActivity.this, MenuActivity.class);
+                    startActivity(intent);
+
                 }
-                break;
-            case R.id.txtRegistrar:
-                Intent  intentRegistra= new Intent(LoginActivity.this, Registrarse.class);
-                startActivity(intentRegistra);
-                //finish();
                 break;
             case R.id.txtRecuperaClave:
                 Intent intentRecupera= new Intent(LoginActivity.this, RecuperaClave.class);
                 startActivity(intentRecupera);
+                //finish();
+                break;
+            case R.id.txtRegistrar:
+                Intent intentRegistrarse= new Intent(LoginActivity.this, Registrarse.class);
+                startActivity(intentRegistrarse);
                 //finish();
                 break;
 
@@ -150,5 +155,4 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
             edtClave.setTransformationMethod(PasswordTransformationMethod.getInstance());
         }
     }
-
 }

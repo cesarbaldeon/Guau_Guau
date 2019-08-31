@@ -8,5 +8,4 @@
     tools:context=".presentation.menu.view.MenuActivity"
     tools:showIn="@layout/app_bar_menu">
 
-
 </androidx.constraintlayout.widget.ConstraintLayout>

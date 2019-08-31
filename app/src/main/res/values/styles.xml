@@ -1,14 +1,10 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
-        <!--item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item-->
-        <!--<item name="colorPrimary">#03ABF7</item>-->
-        <item name="colorPrimary">@color/colorAccent</item>
-        <!--<item name="colorPrimaryDark">#03ABF7</item>-->
-        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
@@ -30,6 +26,7 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+
     <style name="MyTextLabel" parent="TextAppearance.AppCompat">
         <!--EditText hint color-->
         <item name="android:textColorHint">@color/default_app_white</item>
@@ -40,7 +37,7 @@
         <item name="colorControlHighlight">@color/default_app_white</item>
         <!-- EditText line color when EditText  in un-focus-->
         <item name="colorControlNormal">@color/default_app_green</item>
-        <item name="android:textColorPrimary">@color/default_app_green</item>
+        <item name="android:textColorPrimary">@color/default_app_white</item>
     </style>
 
     <style name="MyTextView" parent="AppTheme">
@@ -50,16 +47,13 @@
         <item name="android:textColor">@color/default_app_green</item>
     </style>
 
+    <style name="Titulos">
+        <item name="android:fontFamily">@font/drop_game</item>
+        <item name="fontFamily">@font/drop_game</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/default_app_white</item>
+        <item name="android:textSize">24dp</item>
 
-    <style name="CustomCheckBox" parent="AppTheme">
-        <item name="android:buttonTint">@color/default_app_green</item>
     </style>
 
-
-   <style name="Button_style">
-       <item name="android:elevation">1dp</item>
-       <item name="android:translationZ">1dp</item>
-       <item name="android:textStyle">bold</item>
-       <item name="android:background">@drawable/boton_redondo</item>
-    </style>
 </resources>

@@ -2,8 +2,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pe.edu.cibertec.guauguau">
 
-    <uses-permission android:name="android.permission.INTERNET" />
-
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -13,9 +11,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".presentation.listacanes.view.ListaCanes"></activity>
-        <activity android:name=".presentation.recuperaClave.view.RecuperaClave" />
-        <activity android:name=".presentation.registrarse.view.Registrarse" />
+        <activity android:name=".presentation.registrarse.view.Registrarse"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"></activity>
+        <activity android:name=".presentation.recuperaClave.view.RecuperaClave"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait"/>
         <activity
             android:name=".presentation.menu.view.MenuActivity"
             android:label="@string/title_activity_menu"
@@ -36,7 +37,9 @@
         <activity
             android:name=".presentation.login.view.LoginActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar"/>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
+
+    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

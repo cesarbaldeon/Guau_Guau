@@ -2,18 +2,18 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/menuAgregar"
+        android:id="@+id/action_settings"
         android:orderInCategory="100"
-        android:title="@string/action_agregar"
+        android:title="@string/action_settings"
         app:showAsAction="never" />
     <item
-        android:id="@+id/menuModificar"
+        android:id="@+id/action_settings1"
         android:orderInCategory="100"
-        android:title="@string/action_modificar"
+        android:title="@string/action_settings1"
         app:showAsAction="never" />
     <item
-        android:id="@+id/menuEliminar"
+        android:id="@+id/action_settings2"
         android:orderInCategory="100"
-        android:title="@string/action_eliminar"
+        android:title="@string/action_settings2"
         app:showAsAction="never" />
 </menu>
