@@ -9,7 +9,6 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.EditText;
-import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,11 +24,9 @@ import pe.edu.cibertec.guauguau.R;
 import pe.edu.cibertec.guauguau.data.entities.Usuario;
 import pe.edu.cibertec.guauguau.presentation.login.ILoginContract;
 import pe.edu.cibertec.guauguau.presentation.login.presenter.LoginPresenter;
-import pe.edu.cibertec.guauguau.presentation.main.view.MainActivity;
 import pe.edu.cibertec.guauguau.presentation.menu.view.MenuActivity;
 import pe.edu.cibertec.guauguau.presentation.recuperaClave.view.RecuperaClave;
 import pe.edu.cibertec.guauguau.presentation.registrarse.view.Registrarse;
-import pe.edu.cibertec.guauguau.presentation.splash.view.SplashActivity;
 
 public class LoginActivity extends AppCompatActivity implements ILoginContract.IView, View.OnClickListener, CompoundButton.OnCheckedChangeListener {
 
@@ -72,7 +69,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
     }
 
     @Override
-    public void getUsuariouccess(Usuario pUsuario) {
+    public void getLoginSuccess(Usuario pUsuario) {
 
         if(pUsuario != null)
             gotToPincipal(pUsuario);
@@ -85,7 +82,7 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
     @Override
     public void gotToPincipal(Usuario pUsuario) {
 
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, MenuActivity.class);
         Bundle bUsuario = new Bundle();
         bUsuario.putSerializable("Usuario", (Serializable) pUsuario);
         intent.putExtras(bUsuario);
@@ -120,13 +117,9 @@ public class LoginActivity extends AppCompatActivity implements ILoginContract.I
                 if(eCorreo.equals("") || eClave.equals(""))
                     Toast.makeText(this,"Ingrese datos", Toast.LENGTH_SHORT).show();
                 else{
-                   /* objUsuario.setUser_Name(eCorreo);
+                    objUsuario.setUser_Name(eCorreo);
                     objUsuario.setPassword(eClave);
-                    presenter.getUsuario(objUsuario);*/
-
-                    Intent intent= new Intent(LoginActivity.this, MenuActivity.class);
-                    startActivity(intent);
-
+                    presenter.getLogin(objUsuario);
                 }
                 break;
             case R.id.txtRecuperaClave:

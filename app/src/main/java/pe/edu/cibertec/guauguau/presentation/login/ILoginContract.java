@@ -6,7 +6,7 @@ public interface ILoginContract {
 
     interface IView{
         void showError(String errorMsg);
-        void getUsuariouccess(Usuario pUsuario);
+        void getLoginSuccess(Usuario pUsuario);
         void gotToPincipal(Usuario pUsuario);
     }
 
@@ -14,7 +14,7 @@ public interface ILoginContract {
         void attachView(ILoginContract.IView view);
         void detahView();
         boolean isViewAttched();
-        void getUsuario(Usuario pUsuario);
+        void getLogin(Usuario pUsuario);
     }
 
 

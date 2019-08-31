@@ -33,13 +33,13 @@ public class LoginPresenter implements ILoginContract.IPresenter {
     }
 
     @Override
-    public void getUsuario(Usuario pUsuario) {
+    public void getLogin(Usuario pUsuario) {
 
-        login_Interactor.getUsuario(pUsuario, new ILoginInteractor.ILoginCallBack() {
+        login_Interactor.getLogin(pUsuario, new ILoginInteractor.ILoginCallBack() {
             @Override
             public void onSuccess(Usuario pUsuario) {
                 if(isViewAttched()){
-                    view.getUsuariouccess(pUsuario);
+                    view.getLoginSuccess(pUsuario);
                 }
             }
 

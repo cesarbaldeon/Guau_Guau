@@ -1,13 +1,21 @@
 package pe.edu.cibertec.guauguau.data.entities;
 
-public class Usuario {
+import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
+
+    @SerializedName("id_User")
    private int id_User;
+    @SerializedName("user_Name")
    private String user_Name;
+    @SerializedName("password")
    private String password;
+    @SerializedName("nombre")
    private String nombre;
+    @SerializedName("apellido")
    private String apellido;
-
 
 
     public int getId_User() {
