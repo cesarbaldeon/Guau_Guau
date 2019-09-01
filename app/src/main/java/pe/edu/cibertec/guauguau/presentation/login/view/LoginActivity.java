@@ -1,7 +1,6 @@
 package pe.edu.cibertec.guauguau.presentation.login.view;
 
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;

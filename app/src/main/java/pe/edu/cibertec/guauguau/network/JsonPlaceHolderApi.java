@@ -28,7 +28,7 @@ public interface JsonPlaceHolderApi {
     Call<Usuario> createUser(@Body Usuario pUsuario);
 
 
-    @GET("/comments")
-    Call<List<Mascotas>> getMascotas(@Query("postId") int userId);
+    @POST("servicios/restapi/ma")
+    Call<List<Mascotas>> getMascotas(@Body Usuario pUsuario);
 
 }

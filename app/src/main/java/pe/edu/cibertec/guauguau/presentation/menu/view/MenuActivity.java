@@ -5,21 +5,45 @@ import android.view.View;
 import android.view.MenuItem;
 
 import android.view.Menu;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.inject.Inject;
+
+import pe.edu.cibertec.guauguau.MyApplication;
 import pe.edu.cibertec.guauguau.R;
+import pe.edu.cibertec.guauguau.data.entities.Mascotas;
+import pe.edu.cibertec.guauguau.data.entities.Usuario;
+import pe.edu.cibertec.guauguau.presentation.menu.IMenuContract;
+import pe.edu.cibertec.guauguau.presentation.menu.presenter.MenuPresenter;
 
 public class MenuActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener {
+        implements NavigationView.OnNavigationItemSelectedListener,IMenuContract.IView  {
+
+    private TextView txtusername;
+    private TextView txtnombre;
+    private View view_nav_menu;
+    @Inject
+    MenuPresenter presenter;
+    private List<Mascotas> mascotasList = new ArrayList<>();
+    private RecyclerView recyclerViewComment;
+    private CanesAdapter canesAdapter;
+    private Usuario objusuario;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +52,8 @@ public class MenuActivity extends AppCompatActivity
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         FloatingActionButton fab = findViewById(R.id.fab);
+
+
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -42,7 +68,39 @@ public class MenuActivity extends AppCompatActivity
         drawer.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+        view_nav_menu = navigationView.inflateHeaderView(R.layout.nav_header_menu);
+
+        MyApplication application = (MyApplication)getApplication();
+        application.getAppComponent().inject(this);
+        presenter.attachView(this);
+
+        InicializaParametros();
+        SetObjetos();
     }
+
+    private void InicializaParametros() {
+
+        recyclerViewComment = findViewById(R.id.recyclerViewlistaopciones);
+        txtnombre = view_nav_menu.findViewById(R.id.txtnombremenu);
+        txtusername = view_nav_menu.findViewById(R.id.txtusernamemenu);
+
+        canesAdapter = new CanesAdapter(mascotasList);
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+        recyclerViewComment.setLayoutManager(mLayoutManager);
+        recyclerViewComment.setAdapter(canesAdapter);
+    }
+
+    private void SetObjetos() {
+
+        Bundle busuario = getIntent().getExtras();
+        objusuario = (Usuario) busuario.getSerializable("Usuario");
+
+        txtusername.setText(objusuario.getUser_Name().toString());
+        txtnombre.setText(objusuario.getNombre() + " " + objusuario.getApellido());
+        presenter.getMascota(objusuario);
+    }
+
+
 
     @Override
     public void onBackPressed() {
@@ -82,15 +140,17 @@ public class MenuActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
-        if (id == R.id.nav_home) {
+        if (id == R.id.nav_macotas) {
             // Handle the camera action
-        } else if (id == R.id.nav_gallery) {
+            mascotasList.clear();
+            presenter.getMascota(objusuario);
+        } else if (id == R.id.nav_vacunas) {
 
-        } else if (id == R.id.nav_slideshow) {
+        } else if (id == R.id.nav_perfil) {
 
         /*} else if (id == R.id.nav_tools) {*/
 
-        } else if (id == R.id.nav_share) {
+        } else if (id == R.id.nav_mapas) {
 
         /*} else if (id == R.id.nav_send) {*/
 
@@ -99,5 +159,29 @@ public class MenuActivity extends AppCompatActivity
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void showError(String errorMsg) {
+        Toast.makeText(this,errorMsg,Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void getMascotasSuccess(List<Mascotas> mascotasList) {
+        this.mascotasList.addAll(mascotasList);
+        canesAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    protected void onDestroy() {
+        presenter.detahView();
+        super.onDestroy();
+    }
+
+    @Override
+    public void onDetachedFromWindow() {
+        presenter.detahView();
+        super.onDetachedFromWindow();
+
     }
 }

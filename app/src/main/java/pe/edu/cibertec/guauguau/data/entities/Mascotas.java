@@ -14,6 +14,11 @@ public class Mascotas {
     private String raza;
     @SerializedName("caracter")
     private String caracter;
+    @SerializedName("fecha_nac")
+    private String fecha_nac;
+    @SerializedName("usuarios")
+    private Usuario objUsuarios;
+
 
     public int getId_mascota() {
         return id_mascota;
@@ -53,5 +58,21 @@ public class Mascotas {
 
     public void setCaracter(String caracter) {
         this.caracter = caracter;
+    }
+
+    public Usuario getObjUsuarios() {
+        return objUsuarios;
+    }
+
+    public void setObjUsuarios(Usuario objUsuarios) {
+        this.objUsuarios = objUsuarios;
+    }
+
+    public String getFecha_nac() {
+        return fecha_nac;
+    }
+
+    public void setFecha_nac(String fecha_nac) {
+        this.fecha_nac = fecha_nac;
     }
 }

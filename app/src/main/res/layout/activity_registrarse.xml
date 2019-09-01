@@ -11,9 +11,9 @@
         android:id="@+id/constraintLayout"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="40dp"
-        android:layout_marginEnd="40dp"
+        android:layout_marginEnd="30dp"
         android:layout_marginBottom="40dp"
         android:background="@drawable/fondo"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -114,19 +114,19 @@
                 android:id="@+id/rbMasculino"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/CustomCheckBox"
-                android:layout_marginLeft="20sp"
                 android:layout_marginRight="20sp"
-                android:text="@string/hint_reg_sexo_m" />
+                android:textColor="@color/default_app_green"
+                android:text="@string/hint_reg_sexo_m"
+                android:theme="@style/CustomCheckBox" />
 
             <RadioButton
                 android:id="@+id/rbFemenino"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:theme="@style/CustomCheckBox"
                 android:layout_marginLeft="20sp"
-                android:layout_marginRight="40sp"
-                android:text="@string/hint_reg_sexo_f" />
+                android:text="@string/hint_reg_sexo_f"
+                android:textColor="@color/default_app_green"
+                android:theme="@style/CustomCheckBox" />
         </RadioGroup>
 
         <EditText
@@ -157,28 +157,17 @@
 
 
         <Button
-            android:id="@+id/btnCancelar"
-            style="@style/Button_style"
-            android:layout_width="135dp"
-            android:layout_height="43dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="20dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/boton_Registrase_b"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtConfClave" />
-
-        <Button
             android:id="@+id/btnAceptar"
             style="@style/Button_style"
-            android:layout_width="135dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="20dp"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
             android:layout_marginBottom="30dp"
             android:text="@string/boton_Registrase_a"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/edtConfClave" />
 
