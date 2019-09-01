@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="pe.edu.cibertec.guauguau">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:name=".MyApplication"
         android:allowBackup="true"
@@ -11,18 +13,26 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".presentation.registrarse.view.Registrarse"
-            android:theme="@style/AppTheme.NoActionBar"
-            android:screenOrientation="portrait"></activity>
-        <activity android:name=".presentation.recuperaClave.view.RecuperaClave"
+        <activity android:name=".presentation.datosPersonales.view.DatosPersonalesActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+            ></activity>
+        <activity
+            android:name=".presentation.vacunas.view.ListaVacunasActivity"
             android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait"/>
-        <activity android:name=".presentation.listavacunas.view.ListaVacunas">
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".presentation.registrarse.view.Registrarse"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".presentation.recuperaClave.view.RecuperaClave"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".presentation.menu.view.MenuActivity"
+            android:label=""
             android:screenOrientation="portrait"
-            android:label="@string/title_activity_menu"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".presentation.splash.view.SplashActivity"
@@ -42,7 +52,5 @@
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" />
     </application>
-
-    <uses-permission android:name="android.permission.INTERNET" />
 
 </manifest>

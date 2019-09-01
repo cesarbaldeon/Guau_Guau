@@ -14,6 +14,7 @@ import pe.edu.cibertec.guauguau.data.entities.Mascotas;
 
 public class CanesAdapter extends RecyclerView.Adapter<CanesAdapter.MyViewHolder> {
 
+    private ICanesClickListener clickListener;
     private List<Mascotas> mascotasList;
 
 
@@ -23,12 +24,25 @@ public class CanesAdapter extends RecyclerView.Adapter<CanesAdapter.MyViewHolder
         public MyViewHolder(View view) {
             super(view);
 
+            view.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (clickListener != null) {
+                        clickListener.onClick(getAdapterPosition());
+                    }
+                }
+            });
+
             txtmonbre = (TextView) view.findViewById(R.id.avatar_nombre);
             txtfecha_nac = (TextView) view.findViewById(R.id.avatar_fechas_nac);
             txtdocumento = (TextView) view.findViewById(R.id.avatar_documento);
             txtraza = (TextView) view.findViewById(R.id.avatar_raza);
             txtgrupo = (TextView) view.findViewById(R.id.avatar_grupo);
         }
+    }
+
+    public final void setOnItemClickListener(ICanesClickListener clickListener){
+        this.clickListener = clickListener;
     }
 
     public CanesAdapter(List<Mascotas> mascotasList) {

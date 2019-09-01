@@ -1,4 +1,4 @@
-package pe.edu.cibertec.guauguau.presentation.menu.view;
+package pe.edu.cibertec.guauguau.presentation.vacunas.view;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,7 +13,7 @@ import java.util.List;
 import pe.edu.cibertec.guauguau.R;
 import pe.edu.cibertec.guauguau.data.entities.Vacunas;
 
-public class VacunasAdapter extends RecyclerView.Adapter<VacunasAdapter.MyViewHolder>  {
+public class ListaVacunasAdapter extends RecyclerView.Adapter<ListaVacunasAdapter.MyViewHolder>  {
 
     private List<Vacunas> vacunasList;
 
@@ -30,7 +30,7 @@ public class VacunasAdapter extends RecyclerView.Adapter<VacunasAdapter.MyViewHo
         }
     }
 
-    public VacunasAdapter(List<Vacunas> vacunasList) {
+    public ListaVacunasAdapter(List<Vacunas> vacunasList) {
         this.vacunasList = vacunasList;
     }
 
@@ -38,7 +38,7 @@ public class VacunasAdapter extends RecyclerView.Adapter<VacunasAdapter.MyViewHo
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View itemView = LayoutInflater.from(parent.getContext()).inflate(R.layout.activity_vacunas, parent, false);
-        return new VacunasAdapter.MyViewHolder(itemView);
+        return new ListaVacunasAdapter.MyViewHolder(itemView);
     }
 
     @Override

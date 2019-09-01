@@ -2,7 +2,9 @@ package pe.edu.cibertec.guauguau.data.entities;
 
 import com.google.gson.annotations.SerializedName;
 
-public class Mascotas {
+import java.io.Serializable;
+
+public class Mascotas implements Serializable {
 
     @SerializedName("id_mascota")
     private int id_mascota;

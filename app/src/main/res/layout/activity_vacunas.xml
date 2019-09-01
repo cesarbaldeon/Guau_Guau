@@ -3,98 +3,104 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
+        android:layout_marginEnd="10dp"
         android:background="@drawable/fondo_listas_canes"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
         app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintImagen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
             android:id="@+id/avatar_vacuna"
-            android:layout_width="109dp"
-            android:layout_height="103dp"
-            android:layout_margin="@dimen/avatar_layout_margin"
+            android:layout_width="100dp"
+            android:layout_height="90dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/imagen_vacuna"
+            android:background="@drawable/boton_redondo"
+            app:srcCompat="@drawable/imagen_vacuna"
+            android:padding="12dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/avatar_nombre_vacuna"
-            android:layout_width="150dp"
-            android:layout_height="29dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="bottom"
-            android:padding="@dimen/narrow_space"
-            android:text="DESPARACITACION"
-            android:textColor="@color/default_app_white"
-            app:layout_constraintEnd_toStartOf="@+id/avatar_fechas_vacuna"
-            app:layout_constraintStart_toEndOf="@+id/avatar_vacuna"
-            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
-        <TextView
-            android:id="@+id/avatar_fechas_vacuna"
-            android:layout_width="90dp"
-            android:layout_height="29dp"
-            android:layout_alignParentRight="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:padding="@dimen/narrow_space"
-            android:text="21/09/2019"
-            android:textColor="@color/default_app_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/avatar_nombre_vacuna"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <TextView
-            android:id="@+id/avatar_nombre"
-            android:layout_width="260dp"
-            android:layout_height="30dp"
-            android:layout_alignParentLeft="true"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:gravity="bottom"
-            android:padding="@dimen/narrow_space"
-            android:text="FIDO"
-            android:textColor="@color/default_app_white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/avatar_vacuna"
-            app:layout_constraintTop_toBottomOf="@+id/avatar_fechas_vacuna" />
-
-        <TextView
-            android:id="@+id/avatar_observacion_vacuna"
-            android:layout_width="256dp"
-            android:layout_height="62dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
-            android:padding="@dimen/narrow_space"
-            android:text="CUIDADO QUE NO HAGA FIEBRE, DARLE MUCHA AGUITA."
-            android:textColor="@color/default_app_white"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraintDatos"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/avatar_vacuna"
-            app:layout_constraintTop_toBottomOf="@+id/avatar_nombre" />
+            app:layout_constraintStart_toEndOf="@+id/constraintImagen"
+            app:layout_constraintTop_toTopOf="parent">
 
+            <TextView
+                android:id="@+id/txtnombreva"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:theme="@style/TextViewStatic"
+                app:layout_constraintBottom_toTopOf="@+id/txtnombre_mascota"
+                app:layout_constraintEnd_toStartOf="@+id/txtfechas_vacuna"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtfechas_vacuna"
+                android:layout_width="wrap_content"
+                android:layout_height="29dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="8dp"
+                android:textColor="@color/default_app_white"
+                android:theme="@style/TextViewStatic"
+                app:layout_constraintBottom_toTopOf="@+id/txtnombre_mascota"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtnombre_mascota"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:theme="@style/TextViewStatic"
+                app:layout_constraintBottom_toTopOf="@+id/txt_detalle_vacuna"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.05"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <TextView
+                android:id="@+id/txt_detalle_vacuna"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:textAlignment="center"
+                android:theme="@style/TextViewStatic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.1"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

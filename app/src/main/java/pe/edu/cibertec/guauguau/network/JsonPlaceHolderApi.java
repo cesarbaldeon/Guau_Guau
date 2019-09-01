@@ -6,6 +6,7 @@ import java.util.List;
 
 import pe.edu.cibertec.guauguau.data.entities.Mascotas;
 import pe.edu.cibertec.guauguau.data.entities.Usuario;
+import pe.edu.cibertec.guauguau.data.entities.Vacunas;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -24,8 +25,11 @@ public interface JsonPlaceHolderApi {
     @PUT("user/photo")
     Call<User> updateUser(@Part("photo") RequestBody photo, @Part("description") RequestBody description);*/
 
-    @POST("users/new")
-    Call<Usuario> createUser(@Body Usuario pUsuario);
+    @POST("servicios/restapi/vaxma")
+    Call<List<Vacunas>> getVacunas(@Body Mascotas pMascota);
+
+    @GET("servicios/restapi/vac")
+    Call<List<Vacunas>>getTotalVacunas();
 
 
     @POST("servicios/restapi/ma")

@@ -1,5 +1,6 @@
 package pe.edu.cibertec.guauguau.presentation.menu.view;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.MenuItem;
@@ -20,6 +21,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.navigation.NavigationView;
 import com.google.android.material.snackbar.Snackbar;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -29,8 +31,11 @@ import pe.edu.cibertec.guauguau.MyApplication;
 import pe.edu.cibertec.guauguau.R;
 import pe.edu.cibertec.guauguau.data.entities.Mascotas;
 import pe.edu.cibertec.guauguau.data.entities.Usuario;
+import pe.edu.cibertec.guauguau.data.entities.Vacunas;
+import pe.edu.cibertec.guauguau.presentation.datosPersonales.view.DatosPersonalesActivity;
 import pe.edu.cibertec.guauguau.presentation.menu.IMenuContract;
 import pe.edu.cibertec.guauguau.presentation.menu.presenter.MenuPresenter;
+import pe.edu.cibertec.guauguau.presentation.vacunas.view.ListaVacunasActivity;
 
 public class MenuActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener,IMenuContract.IView  {
@@ -41,8 +46,10 @@ public class MenuActivity extends AppCompatActivity
     @Inject
     MenuPresenter presenter;
     private List<Mascotas> mascotasList = new ArrayList<>();
-    private RecyclerView recyclerViewComment;
+    private List<Vacunas> vacunasList = new ArrayList<>();
+    private RecyclerView recyclerViewMenu;
     private CanesAdapter canesAdapter;
+    private VacunasAdapter vacunasAdapter;
     private Usuario objusuario;
 
     @Override
@@ -80,14 +87,15 @@ public class MenuActivity extends AppCompatActivity
 
     private void InicializaParametros() {
 
-        recyclerViewComment = findViewById(R.id.recyclerViewlistaopciones);
+        recyclerViewMenu = findViewById(R.id.recyclerViewlistaopciones);
         txtnombre = view_nav_menu.findViewById(R.id.txtnombremenu);
         txtusername = view_nav_menu.findViewById(R.id.txtusernamemenu);
 
         canesAdapter = new CanesAdapter(mascotasList);
+        vacunasAdapter = new VacunasAdapter(vacunasList);
         RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-        recyclerViewComment.setLayoutManager(mLayoutManager);
-        recyclerViewComment.setAdapter(canesAdapter);
+        recyclerViewMenu.setLayoutManager(mLayoutManager);
+
     }
 
     private void SetObjetos() {
@@ -98,6 +106,14 @@ public class MenuActivity extends AppCompatActivity
         txtusername.setText(objusuario.getUser_Name().toString());
         txtnombre.setText(objusuario.getNombre() + " " + objusuario.getApellido());
         presenter.getMascota(objusuario);
+
+        canesAdapter.setOnItemClickListener(new ICanesClickListener() {
+            @Override
+            public void onClick(int position) {
+                getVacunasSuccess(mascotasList.get(position));
+            }
+        });
+
     }
 
 
@@ -145,9 +161,11 @@ public class MenuActivity extends AppCompatActivity
             mascotasList.clear();
             presenter.getMascota(objusuario);
         } else if (id == R.id.nav_vacunas) {
-
+            vacunasList.clear();
+            presenter.getTotalVacunas();
         } else if (id == R.id.nav_perfil) {
-
+            Intent intent = new Intent(this, DatosPersonalesActivity.class);
+            startActivity(intent);
         /*} else if (id == R.id.nav_tools) {*/
 
         } else if (id == R.id.nav_mapas) {
@@ -168,8 +186,26 @@ public class MenuActivity extends AppCompatActivity
 
     @Override
     public void getMascotasSuccess(List<Mascotas> mascotasList) {
+        recyclerViewMenu.setAdapter(canesAdapter);
         this.mascotasList.addAll(mascotasList);
         canesAdapter.notifyDataSetChanged();
+    }
+
+    @Override
+    public void getVacunasSuccess(Mascotas objMascota) {
+        Intent intent = new Intent(this, ListaVacunasActivity.class);
+        Bundle bMascota = new Bundle();
+        bMascota.putSerializable("Mascota", (Serializable) objMascota);
+        intent.putExtras(bMascota);
+        startActivity(intent);
+
+    }
+
+    @Override
+    public void getTotalVacunasSuccess(List<Vacunas> vacunas) {
+        recyclerViewMenu.setAdapter(vacunasAdapter);
+        this.vacunasList.addAll(vacunas);
+        vacunasAdapter.notifyDataSetChanged();
     }
 
     @Override

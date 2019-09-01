@@ -6,17 +6,21 @@ import javax.inject.Inject;
 
 import pe.edu.cibertec.guauguau.data.entities.Mascotas;
 import pe.edu.cibertec.guauguau.data.entities.Usuario;
+import pe.edu.cibertec.guauguau.data.entities.Vacunas;
 import pe.edu.cibertec.guauguau.domain.canes_interactor.ICanesInteractor;
+import pe.edu.cibertec.guauguau.domain.vacunas_interactor.IListaVacunasInteractor;
 import pe.edu.cibertec.guauguau.presentation.menu.IMenuContract;
 
 public class MenuPresenter implements IMenuContract.IPresenter {
 
     IMenuContract.IView view;
     private final ICanesInteractor canesInteractor;
+    private final IListaVacunasInteractor vacunasInteractor;
 
     @Inject
-    public MenuPresenter(ICanesInteractor canesInteractor) {
+    public MenuPresenter(ICanesInteractor canesInteractor, IListaVacunasInteractor vacunasInteractor) {
         this.canesInteractor = canesInteractor;
+        this.vacunasInteractor = vacunasInteractor;
     }
 
     @Override
@@ -54,6 +58,26 @@ public class MenuPresenter implements IMenuContract.IPresenter {
             }
         });
 
+    }
+
+
+    @Override
+    public void getTotalVacunas() {
+        vacunasInteractor.getTotalVacunas(new IListaVacunasInteractor.IListaVacunasCallBack() {
+            @Override
+            public void onSuccess(List<Vacunas> listVacunas) {
+                if(isViewAttched()){
+                    view.getTotalVacunasSuccess(listVacunas);
+                }
+            }
+
+            @Override
+            public void onError(String errorMsg) {
+                if(isViewAttched()) {
+                    view.showError(errorMsg);
+                }
+            }
+        });
     }
 
 }

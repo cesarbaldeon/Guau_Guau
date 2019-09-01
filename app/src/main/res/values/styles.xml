@@ -50,7 +50,7 @@
     </style>
 
     <style name="TextViewStatic" parent="AppTheme">
-        <item name="android:textSize">14sp</item>
+        <item name="android:textSize">12sp</item>
         <item name="android:textColor">@color/default_app_white</item>
         <item name="android:fontFamily">@font/drop_game</item>
         <item name="fontFamily">sans-serif-condensed-medium</item>
@@ -63,7 +63,6 @@
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/default_app_white</item>
         <item name="android:textSize">24dp</item>
-
     </style>
 
 </resources>

@@ -17,18 +17,17 @@
     <string name="boton_RecuperaClave">Enviar</string>
     <string name="boton_Registrase_a">Aceptar</string>
     <string name="boton_Registrase_b">Cancelar</string>
-    <string name="title_activity_menu">MenuActivity</string>
+    <string name="boton_Registrase_c">Actualizar</string>
+    <string name="title_activity_menu">Bienvenidos a Guau Guau</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Christian Escobar</string>
-    <string name="nav_header_subtitle">Christian.mahlj@gmail.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Adicionar</string>
     <string name="action_settings1">Modificar</string>
     <string name="action_settings2">Eliminar</string>
 
     <string name="menu_home">Mascotas</string>
-    <string name="menu_gallery">Vacunas</string>
+    <string name="menu_gallery">Todas las Vacunas</string>
     <string name="menu_slideshow">Mapas</string>
     <!--string name="menu_tools"></string-->
     <string name="menu_share">Perfil</string>
